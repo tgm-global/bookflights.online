@@ -6,8 +6,8 @@
 <title>Flight Booking Inquiry | bookflights.online</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="site.css">
-<script src="layout.js" defer></script>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/layout.js" defer></script>
 <style>
 button{font-family:inherit;cursor:pointer}
 .page-container{padding:40px 0 60px}
@@ -44,29 +44,39 @@ button{font-family:inherit;cursor:pointer}
       </div>
     </div>
 
-    <!-- Inquiry Form -->
-    <form action="thankyou.html" method="GET">
-      <input type="hidden" id="qFrom" name="from">
-      <input type="hidden" id="qTo" name="to">
-      <input type="hidden" id="qDepart" name="depart">
-      <input type="hidden" id="qReturn" name="return">
-      <input type="hidden" id="qPax" name="passengers">
-      <input type="hidden" id="qCabin" name="cabin">
-      <input type="hidden" id="qTrip" name="trip">
+    <!-- Web3Forms Integrated Form -->
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <!-- Web3Forms Access Key (Replace YOUR_ACCESS_KEY_HERE with key from web3forms.com) -->
+      <input type="hidden" name="access_key" value="036dbdb1-0c9d-4296-a846-677c36667a17">
+      
+      <!-- Subject for your email -->
+      <input type="hidden" name="subject" value="New Flight Booking Inquiry - bookflights.online">
+      
+      <!-- Redirect to thankyou.html on successful submission -->
+      <input type="hidden" name="redirect" value="thankyou.html">
+
+      <!-- Hidden search fields transferred from index.html -->
+      <input type="hidden" id="qFrom" name="Flight_From">
+      <input type="hidden" id="qTo" name="Flight_To">
+      <input type="hidden" id="qDepart" name="Departure_Date">
+      <input type="hidden" id="qReturn" name="Return_Date">
+      <input type="hidden" id="qPax" name="Passengers">
+      <input type="hidden" id="qCabin" name="Cabin_Class">
+      <input type="hidden" id="qTrip" name="Trip_Type">
 
       <div class="form-group">
         <label for="fullName">Full Name *</label>
-        <input type="text" id="fullName" name="full_name" placeholder="John Doe" required>
+        <input type="text" id="fullName" name="Full_Name" placeholder="John Doe" required>
       </div>
 
       <div class="form-group">
         <label for="email">Email Address *</label>
-        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+        <input type="email" id="email" name="Email_Address" placeholder="john@example.com" required>
       </div>
 
       <div class="form-group">
         <label for="phone">Phone Number *</label>
-        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+        <input type="tel" id="phone" name="Phone_Number" placeholder="+1 (555) 000-0000" required>
       </div>
 
       <button type="submit" class="btn-submit">Submit Flight Inquiry</button>
