@@ -17,8 +17,7 @@
       ['Hotels', '#hotels'],
       ['Cars', '#cars'],
       ['Cruise', '#cruise'],
-      ['Tour Packages', '#tours'],
-      ['Popular routes', 'index.html#routes']
+      ['Tour Packages', '#tours']
     ],
     footerText: 'We may earn a commission when you book through our links, at no extra cost to you.',
     footerLinks: [ ['Terms & privacy', '#']]
